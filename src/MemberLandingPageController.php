@@ -2,9 +2,7 @@
 
 namespace Dynamic\FoxyStripeMembers;
 
-use SilverStripe\Control\Controller;
 use SilverStripe\Control\HTTPRequest;
-use SilverStripe\Security\Member;
 use SilverStripe\Security\Security;
 
 class MemberLandingPageController extends \PageController
@@ -12,20 +10,22 @@ class MemberLandingPageController extends \PageController
     /**
      * @var array
      */
-    private static $allowed_actions = array(
-        'index'
-    );
+    private static $allowed_actions = [
+        'index',
+    ];
 
     /**
      * @return bool|\SilverStripe\Control\HTTPResponse
      */
     public function checkMember()
     {
-        if (Member::currentUser()) {
+        if (Security::getCurrentUser()) {
             return true;
-        } elseif ($MemberPage = FoxyCartMemberProfilePage::get()->First()) {
-            Controller::redirect($MemberPage->Link());
-        } else {
+        }
+        elseif ($MemberPage = FoxyCartMemberProfilePage::get()->First()) {
+            return $this->redirect($MemberPage->Link());
+        }
+        else {
             return Security::permissionFailure($this, _t(
                 'AccountPage.CANNOTCONFIRMLOGGEDIN',
                 'Please login to view this page.'
@@ -40,6 +40,6 @@ class MemberLandingPageController extends \PageController
     public function index(HTTPRequest $request)
     {
         $this->checkMember();
-        return array();
+        return [];
     }
 }

@@ -2,10 +2,7 @@
 
 namespace Dynamic\FoxyStripeMembers;
 
-use SilverStripe\Control\Session;
 use SilverStripe\Security\Member;
-use SilverStripe\Forms\Form;
-use SilverStripe\Control\Director;
 use Symbiote\MemberProfiles\Pages\MemberProfilePage;
 
 /*
@@ -16,7 +13,7 @@ class FoxyCartMemberProfilePage extends MemberProfilePage
     /**
      * @var string
      */
-    private static $hide_ancestor = 'MemberProfilePage';
+    private static $hide_ancestor = MemberProfilePage::class;
 
     /**
      * @var string

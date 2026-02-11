@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "dynamic/foxystripe": "^4.1",
+        "dynamic/foxystripe": "^4.0",
         "symbiote/silverstripe-memberprofiles": "^4.0",
         "php": "^7.1 || ^8.0",
         "silverstripe/recipe-core": "^4.2",
@@ -29,11 +29,6 @@
         "squizlabs/php_codesniffer": "*"
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/jsirish/foxystripe",
-            "no-api": true
-        },
         {
             "type": "vcs",
             "url": "https://github.com/dynamic/foxyclient-php",
@@ -50,9 +45,6 @@
         }
     },
     "extra": {
-        "installer-name": "foxystripe-members",
-        "branch-alias": {
-            "dev-master": "2.0.x-dev"
-        }
+        "installer-name": "foxystripe-members"
     }
 }

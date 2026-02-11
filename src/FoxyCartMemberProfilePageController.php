@@ -22,8 +22,9 @@ class FoxyCartMemberProfilePageController extends MemberProfilePageController
         if ($backURL) {
             $request->getSession()->set('MemberProfile.REDIRECT', $backURL);
         }
-        $mode = Security::getCurrentUser() ? 'profile' : 'register';
-        $data = Security::getCurrentUser() ? $this->indexProfile() : $this->indexRegister();
+        $member = Security::getCurrentUser();
+        $mode = $member ? 'profile' : 'register';
+        $data = $member ? $this->indexProfile() : $this->indexRegister();
         if (is_array($data)) {
             return $this->customise($data)->renderWith([
                 'FoxyCartMemberProfilePage_' . $mode,
@@ -46,7 +47,7 @@ class FoxyCartMemberProfilePageController extends MemberProfilePageController
                 }
             }
 
-            if (isset($data['backURL'])) {
+            if (isset($data['backURL']) && Director::is_site_url($data['backURL'])) {
                 return $this->redirect($data['backURL']);
             }
 
@@ -66,7 +67,8 @@ class FoxyCartMemberProfilePageController extends MemberProfilePageController
             }
 
             return $this->redirect($this->Link('afterregistration'));
-        } else {
+        }
+        else {
             return $this->redirectBack();
         }
     }

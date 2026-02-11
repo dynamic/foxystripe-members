@@ -2,7 +2,7 @@
 
 namespace Dynamic\FoxyStripeMembers;
 
-use SilverStripe\Security\Member;
+
 use Symbiote\MemberProfiles\Pages\MemberProfilePage;
 
 /*

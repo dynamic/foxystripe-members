@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "dynamic/foxystripe": "^4.0",
+        "dynamic/foxystripe": "^4.1",
         "symbiote/silverstripe-memberprofiles": "^4.0",
         "php": "^7.1 || ^8.0",
         "silverstripe/recipe-core": "^4.2",

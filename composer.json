@@ -18,23 +18,35 @@
         }
     ],
     "require": {
-        "dynamic/foxystripe": "^4.0",
+        "dynamic/foxystripe": "^4.1",
         "symbiote/silverstripe-memberprofiles": "^4.0",
-        "php": ">=5.6",
+        "php": "^7.1 || ^8.0",
         "silverstripe/recipe-core": "^4.2",
         "silverstripe/vendor-plugin": "^1.0"
     },
     "require-dev": {
-        "phpunit/PHPUnit": "^5.7",
+        "phpunit/phpunit": "^9.5",
         "squizlabs/php_codesniffer": "*"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/jsirish/foxystripe",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/dynamic/foxyclient-php",
+            "no-api": true
+        }
+    ],
     "config": {
         "process-timeout": 600
     },
     "autoload": {
         "psr-4": {
-          "Dynamic\\FoxyStripeMembers\\": "src/",
-          "Dynamic\\FoxyStripeMembers\\Test\\": "tests/"
+            "Dynamic\\FoxyStripeMembers\\": "src/",
+            "Dynamic\\FoxyStripeMembers\\Test\\": "tests/"
         }
     },
     "extra": {

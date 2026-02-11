@@ -3,9 +3,6 @@
 namespace Dynamic\FoxyStripeMembers;
 
 use Dynamic\FoxyStripe\Page\OrderHistoryPage;
-use SilverStripe\Security\Member;
-use SilverStripe\Control\Controller;
-use SilverStripe\Security\Security;
 
 /**
  * Class MemberLandingPage

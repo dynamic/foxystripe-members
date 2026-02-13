@@ -18,23 +18,15 @@
         }
     ],
     "require": {
-        "dynamic/foxystripe": "^4.0",
-        "symbiote/silverstripe-memberprofiles": "^4.0",
-        "php": "^7.1 || ^8.0",
-        "silverstripe/recipe-core": "^4.2",
-        "silverstripe/vendor-plugin": "^1.0"
+        "dynamic/foxystripe": "^5.0",
+        "symbiote/silverstripe-memberprofiles": "^5.0",
+        "php": "^8.1",
+        "silverstripe/recipe-core": "^5.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^9.6",
         "squizlabs/php_codesniffer": "*"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/dynamic/foxyclient-php",
-            "no-api": true
-        }
-    ],
     "config": {
         "process-timeout": 600
     },
@@ -44,6 +36,18 @@
             "Dynamic\\FoxyStripeMembers\\Test\\": "tests/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/dynamic/foxystripe",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/dynamic/foxyclient-php",
+            "no-api": true
+        }
+    ],
     "extra": {
         "installer-name": "foxystripe-members"
     }
